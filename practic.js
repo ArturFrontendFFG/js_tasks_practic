@@ -620,3 +620,265 @@
 //   console.log(num === arr[i + 1] ? `${num} идет два раза подряд` : 'Повторяющихся цифр нету');
 // })
 
+//level 3.1
+
+// Дано некоторое число. Проверьте, что цифры этого числа расположены по возрастанию.
+// const num = 1234967;
+// for(let i = 0; i < num.toString().length; i++){
+//   +num.toString()[i] === i + 1 ? console.log("Все цифры по возрастанию") :console.log("Все цифры не по возрастанию")
+// }
+
+// [1, '', 2, 3, '', 5]
+// Удалите из массива все пустые строки.
+// console.log([1, '', 2, 3, '', 5].filter(num => num !== ''));
+
+// [
+// 	[2, 1, 4, 3, 5],
+// 	[3, 5, 2, 4, 1],
+// 	[4, 3, 1, 5, 2],
+// ]
+// Отсортируйте элементы в каждом подмассиве.
+// const arrays = [
+//   [2, 1, 4, 3, 5],
+//   [3, 5, 2, 4, 1],
+//   [4, 3, 1, 5, 2],
+// ];
+// arrays.forEach((arr) => {
+//   console.log(arr.sort((a, b) => a - b));
+// });
+
+// Удалите из большего массива лишние элементы с конца так, чтобы длины массивов стали одинаковыми.
+// let arr1 = [1, 2, 3];
+// let arr2 = [1, 2, 3, 4, 5];
+// arr2.splice(arr1.length);
+// console.log(arr2);
+
+//level 3.2
+// Выведите в консоль все числа в промежутке от 10 до 1000, у которых предпоследняя цифра четная.
+// for (let i = 10; i < 1000; i++) {
+//   if (+i.toString()[i.toString().length - 2] % 2 === 0) console.log(i);
+// }
+
+// Дан массив. Удалите из него каждый пятый элемент.
+// const arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+// console.log(arr.filter((el,idx) => (idx + 1) % 5 !== 0));
+
+// let num = 5;
+// Сделайте строку, содержащую столько нулей, сколько указано в переменной. В нашем случае получится такая строка:
+// '00000'
+// let num = 50;
+// let result = ''
+// for(let i = 0; i < num; i++){
+//     result += '0'
+// }
+// console.log(result);
+
+// Дана некоторая строка со словами: 'aaa bbb ccc eee fff'
+// Удалите из этой строки каждое второе слово. В нашем случае должно получится следующее: 'aaa ccc fff'
+
+// const str = "aaa bbb ccc eee fff";
+// console.log(str.split(" ").filter((word, idx) => (idx % 2 === 0 ? word : "")));
+
+// Дан массив:
+// [
+// 	[1, 2, 3],
+// 	[4, 5, 6],
+// 	[7, 8, 9],
+// ]
+// Найдите сумму элементов этого массива.
+
+// const arrays = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9],
+// ];
+// let result = 0;
+// arrays.forEach((arr) => {
+//   result += arr.reduce((acc, num) => (acc += num));
+// });
+// console.log(result);
+
+//level 3.3
+// Дан массив со словами. Удалите из него слова, состоящие более чем из трех символов.
+// const arrWords = ['abc', 'nonon', 'lalala', 'qiwiqi', '12'];
+// console.log(arrWords.filter(word => word.length <= 3));
+
+// Дано некоторое число: 1357
+// Проверьте, что все цифры этого числа являются нечетными.
+// let num = 1357;
+// const arrFromNum = String(num).split('');
+// console.log(arrFromNum.every(letter => +letter % 2 !== 0) ? 'Все числа нечетные' : 'Некоторые числа четные ');
+
+// 'abcba'
+// Проверьте, что это слово читается одинаково с любой стороны.
+// const str = 'abcba'
+// console.log(str.split('').join('') === str.split('').reverse().join(''));
+
+// Найдите сумму элементов этого массива.
+// const nestedArr = [
+// 	[
+// 		[11, 12, 13],
+// 		[14, 15, 16],
+// 		[17, 17, 19],
+// 	],
+// 	[
+// 		[21, 22, 23],
+// 		[24, 25, 26],
+// 		[27, 27, 29],
+// 	],
+// 	[
+// 		[31, 32, 33],
+// 		[34, 35, 36],
+// 		[37, 37, 39],
+// 	],
+// ]
+
+// function sumNestedArr(arr) {
+//     let sum = 0;
+
+//     for (let i = 0; i < arr.length; i++) {
+//         if (Array.isArray(arr[i])) {
+//             sum += sumNestedArr(arr[i]);
+//         } else {
+//             console.log(true);
+//             sum += arr[i];
+//         }
+//     }
+
+//     return sum;
+// }
+// let result = sumNestedArr(nestedArr)
+// console.log(result);
+
+//level 3.4
+// Выведите в консоль все числа в промежутке от 10 до 1000, у которых первая цифра четная.
+// for(let i = 10; i < 1000; i++){
+//     if(+i.toString().charAt(0) % 2 === 0) console.log(i);
+// }
+
+// Дан некоторый массив, например, вот такой: [1, 2, 3, 4, 5, 6]
+// Поменяйте местами пары элементов этого массива: [2, 1, 4, 3, 6, 5]
+
+// const arr = [1,2,3,4,5,6];
+// let result = []
+// for (let i = 0; i < arr.length; i += 2) {
+//   const chunk = arr.slice(i, i + 2)
+//   result.push(chunk.reverse().join(''));
+// }
+// console.log(result.toString().split('').filter(num => num !== ',').map(num => +num));
+
+// Дан следующий объект:
+// let obj = {
+//   1: {
+//     1: 11,
+//     2: 12,
+//     3: 13,
+//   },
+//   2: {
+//     1: 21,
+//     2: 22,
+//     3: 23,
+//   },
+//   3: {
+//     1: 24,
+//     2: 25,
+//     3: 26,
+//   },
+// };
+
+// const sumObject = (obj) => {
+//   let sum = 0;
+//   for (let keys in obj) {
+//     if (obj[keys] !== null && typeof obj[keys] === "object") {
+//       sum += sumObject(obj[keys]);
+//     } else {
+//       sum += obj[keys];
+//     }
+//   }
+//   return sum;
+// };
+// console.log(sumObject(obj));
+
+//level 3.5
+// Дан текст со словами. Запишите в массив все слова, начинающиеся на букву 'a'.
+// const str =
+//   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amob Modi delectus dicta eos consectetur, itaque dolorem cumque magni consequatur asperiores ut ipsam aliquam totam eligendi sint molestias vel. Eius, vero saepe.";
+// console.log(str.split(' ').filter(word => word.charAt(0).toLowerCase() === 'a'));
+
+//Дан массив с числами. Оставьте в нем только те числа, которые делятся на 5.
+// const arrNums = [10,5,9,11,43];
+// console.log(arrNums.filter(num => num % 5 === 0));
+
+// Дан массив с числами. Оставьте в нем только те числа, которые содержат цифру ноль.
+// const arrNums = [23,105,32,57,90];
+// console.log(arrNums.filter(num => num.toString().includes('0')));
+
+// Дан массив со числами. Проверьте, что в нем есть число, содержащее в себе цифру 3.
+// const arrNums = [124,123,757,954,354];
+// console.log(arrNums.filter(num => num.toString().includes('3') ? num : ''));
+
+// 35142
+// Отсортируйте цифры этого числа. В нашем случае должно получится следующее: 12345
+// let num = 35142;
+// console.log(+num.toString().split("").sort((a,b) => a - b).join(''));
+
+// Напишите программу, которая сформирует следующую строку: '-1-2-3-4-5-'
+// let count = 5;
+// let result = ''
+// for(let i = 0; i < count; i++){
+//     result += `-${i + 1}` 
+// }
+// console.log(`${result}-`);
+
+let obj = {
+	1: {
+		1: {
+			1: 111,
+			2: 112,
+			3: 113,
+		},
+		2: {
+			1: 121,
+			2: 122,
+			3: 123,
+		},
+	},
+	2: {
+		1: {
+			1: 211,
+			2: 212,
+			3: 213,
+		},
+		2: {
+			1: 221,
+			2: 222,
+			3: 223,
+		},
+	},
+	3: {
+		1: {
+			1: 311,
+			2: 312,
+			3: 313,
+		},
+		2: {
+			1: 321,
+			2: 322,
+			3: 323,
+		},
+	},
+}
+const sumObject = (obj) => {
+  let sum = 0;
+  for (let keys in obj) {
+    if (obj[keys] !== null && typeof obj[keys] === "object") {
+      sum += sumObject(obj[keys]);
+    } else {
+      sum += obj[keys];
+    }
+  }
+  return sum;
+};
+console.log(sumObject(obj));
+// Найдите сумму элементов этого объекта.
+
