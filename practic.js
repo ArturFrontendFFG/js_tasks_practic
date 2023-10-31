@@ -826,59 +826,223 @@
 // let count = 5;
 // let result = ''
 // for(let i = 0; i < count; i++){
-//     result += `-${i + 1}` 
+//     result += `-${i + 1}`
 // }
 // console.log(`${result}-`);
 
-let obj = {
-	1: {
-		1: {
-			1: 111,
-			2: 112,
-			3: 113,
-		},
-		2: {
-			1: 121,
-			2: 122,
-			3: 123,
-		},
-	},
-	2: {
-		1: {
-			1: 211,
-			2: 212,
-			3: 213,
-		},
-		2: {
-			1: 221,
-			2: 222,
-			3: 223,
-		},
-	},
-	3: {
-		1: {
-			1: 311,
-			2: 312,
-			3: 313,
-		},
-		2: {
-			1: 321,
-			2: 322,
-			3: 323,
-		},
-	},
-}
-const sumObject = (obj) => {
-  let sum = 0;
-  for (let keys in obj) {
-    if (obj[keys] !== null && typeof obj[keys] === "object") {
-      sum += sumObject(obj[keys]);
-    } else {
-      sum += obj[keys];
-    }
-  }
-  return sum;
-};
-console.log(sumObject(obj));
+// let obj = {
+// 	1: {
+// 		1: {
+// 			1: 111,
+// 			2: 112,
+// 			3: 113,
+// 		},
+// 		2: {
+// 			1: 121,
+// 			2: 122,
+// 			3: 123,
+// 		},
+// 	},
+// 	2: {
+// 		1: {
+// 			1: 211,
+// 			2: 212,
+// 			3: 213,
+// 		},
+// 		2: {
+// 			1: 221,
+// 			2: 222,
+// 			3: 223,
+// 		},
+// 	},
+// 	3: {
+// 		1: {
+// 			1: 311,
+// 			2: 312,
+// 			3: 313,
+// 		},
+// 		2: {
+// 			1: 321,
+// 			2: 322,
+// 			3: 323
+// 		},
+// 	},
+// }
+// const sumObject = (obj) => {
+//   let sum = 0;
+//   for (let keys in obj) {
+//     if (obj[keys] !== null && typeof obj[keys] === "object") {
+//       sum += sumObject(obj[keys]);
+//     } else {
+//       sum += obj[keys];
+//     }
+//   }
+//   return sum;
+// };
+// console.log(sumObject(obj));
 // Найдите сумму элементов этого объекта.
 
+//level 3.6
+// Дан массив с числами. Удалите из него числа, состоящие более чем из трех цифр.
+// const arrNums = [1234,56,1,90,2453];
+// console.log(arrNums.filter(num => String(num).length < 3));
+
+// Дано число, например, вот такое:
+// let num = 123405;
+// // Проверьте, что все цифры этого числа больше нуля.
+// for(let i = 0; i < num.toString().length; i++){
+// 	if(+num.toString()[i] > 0){
+// 		console.log(true);
+// 	}else{
+// 		console.log(false);
+// 	}
+// }
+
+//Дан некоторый массив, например, вот такой: [123, 456, 789]
+// Слейте все элементы этого массива в один массив, разбив их посимвольно: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+// const arr = [123,456,789];
+// console.log(arr.join('').split('').map(num => +num));
+
+//level 3.7
+// Дана строка со словами. Отсортируйте слова в алфавитном порядке.
+// const str = "Green Zebra Red Apple Blue";
+// console.log(
+//   str.split(" ").sort((a, b) => {
+//     let letterOne = a.toLowerCase().charAt(0);
+//     let secondOne = b.toLowerCase().charAt(0);
+
+//     if (letterOne < secondOne) return -1;
+//     if (letterOne > secondOne) return 1;
+//     return 0;
+//   })
+// );
+
+// Дано число. Получите массив делителей этого числа.
+// const num = 20;
+// let count = 0;
+// let result = []
+// for(let i = 0; i < num; i++){
+// 	count++;
+// 	if(num % count === 0){
+// 		result.push(count)
+// 	}
+// }
+// console.log(result);
+
+// Даны два числа. Получите массив общих делителей этих чисел.
+// const num1 = 20;
+// const num2 = 35;
+// let count = 0;
+// let result = [];
+// const mostBigValue = num1 > num2 ? num1 : num2;
+// for (let i = 0; i < mostBigValue; i++) {
+//   count++
+//   if (num1 % count === 0 && num2 % count === 0) {
+//     result.push(count)
+//   }
+// }
+// console.log(result);
+
+// Через запятую написаны числа. Получите максимальное из этих чисел.
+// let num = '1,2,51,135,3,86,1';
+// let arrayNums = num.split(',').map(num => +num);
+// console.log(arrayNums.sort((a,b) => b-a)[0]);
+
+// Дана строка. Удалите из нее все гласные буквы.
+// let string = 'Удалить все гласные буквы их этого предложения';
+// let abc = ['а', 'и', 'е', 'ё', 'о', 'у', 'ы', 'э', 'ю', 'я' ];
+
+// console.log(string.split('').filter(letter => !abc.includes(letter)).join(''));
+
+// Дана строка. Сделайте заглавной последнюю букву каждого слова в этой строке.
+// let str = "This is line";
+// console.log(
+//   str
+//     .split(" ")
+//     .map(
+//       (word) =>
+//         word.slice(0, word.length - 1) +
+//         word.charAt(word.length - 1).toUpperCase()
+//     )
+//     .join(" ")
+// );
+
+// Дан следующая структура:
+
+// let data = [
+// 	{
+// 		1: [1, 2, 3],
+// 		2: [1, 2, 3],
+// 		3: [1, 2, 3],
+// 	},
+// 	{
+// 		1: [1, 2, 3],
+// 		2: [1, 2, 3],
+// 		3: [1, 2, 3],
+// 	},
+// 	{
+// 		1: [1, 2, 3],
+// 		2: [1, 2, 3],
+// 		3: [1, 2, 3],
+// 	},
+// ];
+// // Найдите сумму элементов этой структуры.
+
+// let sum = 0
+// function findSum(object){
+//   for(let key in object){
+//     if(object[key] !== null && typeof object[key] === 'object'){
+//       findSum(object[key])
+//     }else{
+//       sum += object[key]
+//     }
+//   }
+//   return sum
+// }
+// console.log(findSum(data));
+
+//level 3.8
+// Дан массив со числами. Проверьте, что все числа из этого массива содержат в себе цифру 3.
+// const arrayNums = [123,523,432,6543];
+// console.log(arrayNums.every(num => num.toString().includes('3')));
+
+// Дана строка в формате: 'kebab-case'
+// Преобразуйте ее в формат: 'snake_case'
+// const str = 'kebab-case-work';
+// console.log(str.replace(/-/gi, "_"));
+
+// Дана строка в формате:'snake_case'
+// Преобразуйте ее в формат: 'camelCase'
+// const str = 'snake_case_and_any_words';
+// console.log(str.split("_").map((word, idx) => idx !== 0 ? word.charAt().toUpperCase() + word.slice(1) : word).join(''));
+
+// Дана строка в формате: 'camelCase'
+// Преобразуйте ее в формат: 'snake_case'
+
+// const str = 'camelCaseSecondVeryLongLine';
+// let [firstWord] = str.split(/(?=[A-Z])/).slice(0,1);
+// console.log(firstWord + "_" +  str.replace(/[A-Z]/g, letter => `_${letter.toLowerCase()}`).split('_').splice(1).join("_"));
+
+// Сформируйте с помощью циклов следующий массив:
+
+// [
+// 	[1, 2, 3],
+// 	[1, 2, 3],
+// 	[1, 2, 3],
+// 	[1, 2, 3],
+// 	[1, 2, 3],
+// ]
+
+let result = [];
+let count = 0;
+let maxElemInInnerArray = 3;
+
+for(let i = 0; i < 4; i++){
+  let newArray = new Array();
+  count++
+  if(count <= 4 && count <= 3){
+    newArray.push(count)
+  }
+  result.push(newArray)
+}
+console.log(result);
