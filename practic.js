@@ -1033,16 +1033,165 @@
 // 	[1, 2, 3],
 // ]
 
-let result = [];
-let count = 0;
-let maxElemInInnerArray = 3;
+// let result = [];
+// let count = 0;
+// let maxCountInnerArray = 4;
 
-for(let i = 0; i < 4; i++){
-  let newArray = new Array();
-  count++
-  if(count <= 4 && count <= 3){
-    newArray.push(count)
-  }
-  result.push(newArray)
-}
-console.log(result);
+// for (let i = 0; i < maxCountInnerArray; i++) {
+//   let newArray = new Array();
+//   for (let j = 0; j < 3; j++) {
+//     newArray.push(j + 1);
+//   }
+//   result.push(newArray);
+// }
+// console.log(result);
+
+//знаю что решил плохо так как сложность алгоритма O(n^2);
+
+// level 3.9
+// Дана строка. Проверьте, что эта строка состоит только из цифр.
+// const strNums = '346521';
+// let arrayNums = [1,2,3,4,5,6,7,8,9].map(num => num.toString());
+// console.log(strNums.split('').every(symbol => arrayNums.includes(symbol)));
+
+// Дана строка. Проверьте, что эта строка состоит только из четных цифр.
+// const strNums = '20486';
+// console.log(strNums.split('').every(num => +num % 2 === 0));
+
+// Дан массив со числами. Удалите из него числа, имеющие два и более нуля.
+// const arrayNums = [432, 900, 124000, 31, 30033];
+// console.log(arrayNums.filter(num => !num.toString().includes('00')));
+
+// Найдите все числа от 1 до 1000, сумма цифр которых равна 13.
+// for(let i = 1; i < 1000; i++){
+//   if(i.toString().split('').map(num => +num).reduce((prevAcum, num) => prevAcum += num) === 13) console.log(i);
+// }
+
+// Сформируйте с помощью циклов следующий массив:
+// [
+// 	[1, 2, 3],
+// 	[4, 5, 6],
+// 	[7, 8, 9],
+// ]
+
+// let numRows = 3;
+// let numCols = 3;
+// let counter = 1;
+// let resultArray = [];
+
+// for (let i = 0; i < numRows; i++) {
+//   let row = [];
+//   for (let j = 0; j < numCols; j++) {
+//     row.push(counter);
+//     counter++;
+//   }
+//   resultArray.push(row);
+// }
+
+// console.log(resultArray);
+
+//level 3.10
+// Дан массив. Сделайте так, чтобы в нем каждый элемент повторился два раза.
+// const array = ["a", 5, "g", false];
+// let copyArray = JSON.parse(JSON.stringify(array));
+// let countIdx = 1
+
+// array.map((el) => {
+//   copyArray.splice(countIdx, 0, el);
+//   countIdx += 2
+// })
+// console.log(copyArray);
+
+// Дан массив и число. Оставьте в массиве только те числа, которые являются делителями заданного числа.
+// const arrayNums = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+// const numDivider = 2;
+// console.log(arrayNums.filter(num => num % numDivider === 0));
+
+// Даны два числа. Получите массив цифр, которые есть и в одном, и во втором числе.
+// let num1 = 5623;
+// let num2 = 8963;
+
+// let result = [];
+
+// num1
+//   .toString()
+//   .split("")
+//   .map((num) => +num)
+//   .map(
+//     (el) =>
+//       num2
+//         .toString()
+//         .split("")
+//         .map((num) => +num)
+//         .includes(el) && result.push(el)
+//   );
+
+// console.log(result);
+//Ужас :)
+
+// Дано число. Получите массив позицией всех цифр 3 в этом числе, за исключением первой и последней.
+// let num = 353454643534333;
+// let result = []
+// num.toString().split('').map((num, i) => num === '3' && result.push(i)).splice(1, num.toString().length - 1);
+// console.log(result);
+
+// Дан массив со числами. Оставьте в нем числа, состоящие из разных цифр, а остальные удалите.
+//Позже решу
+
+// [
+// 	[1, 2, 3],
+// 	[4, 5, 6],
+// 	[7, 8, 9],
+// ]
+// Слейте элементы этого массива в один одномерный массив:
+
+// [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+// const bigArr = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9],
+// ];
+
+// console.log(bigArr.flat());
+
+//level 4.1
+// Сделайте функцию, которая вернет текущий день недели словом.
+
+// const daysList = new Map([
+//   [1, "Понедельник"],
+//   [2, "Вторник"],
+//   [3, "Среда"],
+//   [4, "Четверг"],
+//   [5, "Пятница"],
+//   [6, "Суббота"],
+//   [7, "Воскресенье"],
+// ]);
+
+// function sayNowDay(day) {
+//   return `Сегодня ${daysList.get(day)}`;
+// }
+// const nowDay = new Date().getDay();
+
+// console.log(sayNowDay(nowDay));
+
+// Сделайте функцию, которая параметром будет получать дату, а возвращать день недели словом, соответствующий этой дате.
+// const daysList = new Map([
+//   ["Mon", "Понедельник"],
+//   ["Thu ", "Вторник"],
+//   ["Wed", "Среда"],
+//   ["Thu", "Четверг"],
+//   ["Fri", "Пятница"],
+//   ["Sat", "Суббота"],
+//   ["Sun", "Воскресенье"],
+// ]);
+
+// function sayNowDay(date) {
+//   const nameDay = String(date).split(" ")[0];
+//   return `Сегодня ${daysList.get(nameDay)}`;
+// }
+// const nowDate = new Date();
+// console.log(sayNowDay(nowDate));
+
+
+// Сделайте функцию, которая параметром будет принимать секунды, а возвращать количество суток, соответствующих этим секундам.
