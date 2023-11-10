@@ -1193,5 +1193,148 @@
 // const nowDate = new Date();
 // console.log(sayNowDay(nowDate));
 
-
 // Сделайте функцию, которая параметром будет принимать секунды, а возвращать количество суток, соответствующих этим секундам.
+// function day(seconds) {
+//     return seconds / 60 / 60 / 24
+// }
+// console.log(day(172800));
+
+// Сделайте функцию, которая параметром будет принимать число и строку и обрезать эту строку до длины, заданной первым параметром.
+// const str = 'dfgkjl34sgr3'
+// function cutLine (num, line){
+//     const result = line.split('');
+//     result.length = num;
+//     return result.join('');
+// }
+// console.log(cutLine(2, str));
+
+// Сделайте функцию, которая параметром будет получать дату, а возвращать знак зодиака, соответствующий этой дате.
+
+// function getZodiacSign(dateString) {
+//   if (typeof dateString !== "string" && dateString.split("").length < 2)
+//     return null;
+//   const date = new Date(dateString);
+
+//   const month = date.getMonth() + 1;
+//   const day = date.getDate();
+
+//   if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
+//     return "Овен";
+//   } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
+//     return "Телец";
+//   } else if ((month === 5 && day >= 21) || (month === 6 && day <= 20)) {
+//     return "Близнецы";
+//   } else if ((month === 6 && day >= 21) || (month === 7 && day <= 22)) {
+//     return "Рак";
+//   } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
+//     return "Лев";
+//   } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
+//     return "Дева";
+//   } else if ((month === 9 && day >= 23) || (month === 10 && day <= 22)) {
+//     return "Весы";
+//   } else if ((month === 10 && day >= 23) || (month === 11 && day <= 21)) {
+//     return "Скорпион";
+//   } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
+//     return "Стрелец";
+//   } else if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
+//     return "Козерог";
+//   } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
+//     return "Водолей";
+//   } else {
+//     return "Рыбы";
+//   }
+// }
+
+//// Формат: год-месяц-день
+// console.log(getZodiacSign("2023-04-14"));
+
+// Сделайте функцию, которая параметром будет принимать число, а возвращать сумму его делителей.
+// const num = 10;
+
+// function calculateSumDividers(num) {
+//   if(typeof num !== 'number' || num === Infinity || num === NaN) return null;
+//   let dividers = [];
+//   let counter = 0;
+
+//   for (let i = 0; i < num; i++) {
+//     counter++;
+//     if (num % counter === 0) dividers.push(counter);
+//   }
+
+//   return dividers.reduce((a, b) => (a += b));
+// }
+
+// console.log(calculateSumDividers(50));
+
+//level 4.2
+// const num = 42;
+
+// function calculateSumNums(numeric){
+//     if(typeof numeric !== 'number' && isNaN(numeric)) throw new TypeError("Inside function should be only number type");
+
+//     return numeric.toString().split('').map(el => +el).reduce((acc, num) => acc += num);
+// }
+
+// console.log(calculateSumNums(num));
+
+// Сделайте функцию, которая параметром будет принимать число и удалять из него нули.
+// const num = 2004002;
+
+// function deleteZeroInNum(num){
+//     return +num.toString().split('').filter(el => el !== '0').join('');
+// }
+// console.log(deleteZeroInNum(num));
+
+// Сделайте функцию, которая будет возвращать сколько дней прошло или осталось до заданной даты в году, в зависимости от того, была уже эта дата или нет.
+
+// Additional tasks
+
+// Выведите на экран текущую дату-время в формате 12:59:59 31.12.2014. Используйте для всех частей даты (кроме года) созданную нами функцию для добавления нуля при необходимости.
+
+// const addZero = (dateNum) => {
+//   if (dateNum <= 10) return "0" + dateNum;
+//   return dateNum;
+// };
+
+// const date = new Date();
+
+// let dateTime = `${addZero(date.getHours())}:${addZero(
+//   date.getMinutes()
+// )}:${addZero(date.getSeconds())}`;
+
+// let dateGlobal = `${addZero(date.getDay())}-${addZero(date.getMonth() + 1)}-${date.getFullYear()}`
+
+// console.log(
+//     dateTime,
+//     dateGlobal
+// );
+
+// Дана дата в формате год-месяц-день. Преобразуйте эту дату в формат день.месяц.год.
+// const date = '2009-10-05';
+
+// String.prototype.reverseDate = function (){
+//     return this.split('-').reverse().join('-');
+// }
+
+// console.log(date.reverseDate());
+
+// Определите, является ли текущий день недели выходным или рабочим днем.
+// let day = new Date().getDay();
+// console.log(day)
+// if(day === 0 || day === 6) console.log('Выходной день');
+// else console.log('Рабочий')
+// Определите сколько дней осталось до ближайшего воскресенья.
+// let days = ['Воскресенье', "Понедельник", 'Вторник', 'Среда', "Четверг", 'Пятница', 'Суббота'];
+
+// let day = new Date().getDay();
+// days.splice(0,day);
+// console.log(days.length);
+
+// let months = [
+// 	'янв', 'фев', 'мар', 'апр', 'май', 'июн',
+// 	'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'
+// ];
+// // Выведите с помощью этого массива название текущего месяца.
+// let month = new Date().getMonth();
+// console.log(months[month])
+
