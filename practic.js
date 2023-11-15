@@ -1286,9 +1286,112 @@
 // console.log(deleteZeroInNum(num));
 
 // Сделайте функцию, которая будет возвращать сколько дней прошло или осталось до заданной даты в году, в зависимости от того, была уже эта дата или нет.
+// function calculateDate(targetDate){
+//     const dateNow = new Date();
+//     const diff = dateNow - targetDate
+//     const daysDiff = Math.ceil(diff / (1000 * 60 * 60 * 24));
 
+//     if(daysDiff > 0){
+//         return `${daysDiff} days have passed since the date`
+//     }else if(daysDiff < 0){
+//         return `This date will be in ${(daysDiff + 1).toString().replace(/-/g, '')} days`
+//     }else{
+//         return `Its now`
+//     }
+// }
+// let date = new Date(2023, 10, 14)
+// console.log(calculateDate(date));
+
+// Сделайте функцию, которая параметром будет год и проверять, високосный он или нет.
+// function leapYear(year){
+//     const getMarch = new Date(year, 2, 0).getDate();
+//     return getMarch === 29 ? 'Високосный' : "Не високосный"
+// }
+// console.log(leapYear(2002));
+
+// Сделайте функцию, которая вернет массив всех високосных годов за предыдущие сто лет.
+// const getArrayLeapsYears = () => {
+//     const yearsArray = []
+//     const dateNow = new Date();
+//     for(let i = dateNow.getFullYear() - 100; i <= dateNow.getFullYear(); i++){
+//         const intervalDate = new Date(i, 2, 0);
+//         if(intervalDate.getDate() === 29) yearsArray.push(i);
+//     }
+//     return yearsArray
+// }
+// console.log(getArrayLeapsYears());
+
+// Сделайте функцию, которая будет возвращать сколько дней осталось до конца текущего месяца.
+// function daysUntilEndOfMonth (year, month) {
+//     const dateNow = new Date(year, month, 0);
+//     const daysNow = new Date().getDate()
+//     return `Until the end of the month left ${dateNow.getDate() - daysNow}`
+// }
+// console.log(daysUntilEndOfMonth(2023, 10));
+
+// Сделайте функцию, которая вернет предыдущий, текущий и следующий дни недели словом в виде следующего объекта:
+
+// {
+// 	next: 'пн',
+// 	curr: 'вс',
+// 	prev: 'сб',
+// }
+
+// const getDate = () => {
+//     const days = ['вс', 'пн', 'вт', 'ср', 'чет', 'пят', 'суб'];
+//     const dayNow = new Date().getDay();
+//     const daysObject = {
+//         next: days[dayNow + 1],
+//         curr: days[dayNow],
+//         prev: days[dayNow - 1]
+//     }
+//     return daysObject
+// }
+// console.log(getDate());
+
+// Сделайте функцию, которая параметром будет принимать массив и удалять из него все дубли.
+const arr = ["one", "second", "one", "one", "third", "second", "one"];
+// function deleteDuplicate (array){
+//     if(!Array.isArray(array)) throw new TypeError('Argument could be only array type');
+//     array = Array.from(new Set(array));
+//     return array
+// }
+// console.log(deleteDuplicate(arr));
+
+// Сделайте функцию, которая параметром будет принимать массив и удалять из него все дубли, которые встречаются больше трех раз.
+// function removeDuplicates(arr) {
+//     const frequency = {};
+
+//     for (let i = 0; i < arr.length; i++) {
+//         const el = arr[i];
+//         frequency[el] = (frequency[el] || 0) + 1;
+//     }
+//     for (let i = 0; i < arr.length; i++) {
+//         const el = arr[i];
+//         if (frequency[el] > 3) {
+//             arr.splice(i, 1), i--;
+//             frequency[el]--;
+//         }
+//     }
+
+//     return arr;
+// }
+// console.log(removeDuplicates(arr));
+
+// Сделайте функцию, которая параметром будет принимать массив и удалять из него одинаковые, рядом стоящие элементы.
+// function deleteNearElements(array) {
+//   const result = [];
+//   array.forEach((el, idx) => {
+//     if (!result.includes(el) && el === array[idx]) {
+//       result.push(el);
+//     }
+//   });
+//   return result
+// }
+
+// console.log(deleteNearElements(arr));
+//
 // Additional tasks
-
 // Выведите на экран текущую дату-время в формате 12:59:59 31.12.2014. Используйте для всех частей даты (кроме года) созданную нами функцию для добавления нуля при необходимости.
 
 // const addZero = (dateNum) => {
@@ -1338,3 +1441,34 @@
 // let month = new Date().getMonth();
 // console.log(months[month])
 
+// let date = new Date(2020, 1, 0);
+// console.log(date.getDate());
+// Оформите этот способ решения проблемы в виде функции, которая параметрами будет принимать месяц и год и возвращать номер последнего дня этого месяца;
+
+// function getDaysOfMonth(year, month){
+//     const date = new Date(year, month, 0);
+//     return date.getDate()
+// }
+// console.log(getDaysOfMonth(1999, 3))
+
+// Определите, какой день недели будет в последнем дне пятого месяца 2025 года.
+// const date = new Date(2025, 4, 0);
+// console.log(date.getDate());
+
+// Сделайте функцию isLeap, которая параметром будет принимать год и возвращать true, если этого год високосный, и false - если нет.
+
+// function isLeap(year){
+//     const getMarch = new Date(year, 2, 0).getDate();
+//     return getMarch === 29 ? true : false
+// }
+// console.log(isLeap(2004));
+
+// Сделайте функцию checkDate, которая будет выполнять описанную проверку. Пусть функция возвращает true, если дата корректна и false, если нет. Пример работы этой функции для 31 января и 32 января:
+// console.log(checkDate(2025, 0, 31)); // выведет true
+// console.log(checkDate(2025, 0, 32)); // выведет false
+
+// function checkDate (year, month, days) {
+//     const date = new Date(year, month, days);
+//     if(date.getFullYear() === year && date.getMonth() === month && date.getDate() === days) return true
+//     else return false
+// }
