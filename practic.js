@@ -1350,7 +1350,7 @@
 // console.log(getDate());
 
 // Сделайте функцию, которая параметром будет принимать массив и удалять из него все дубли.
-const arr = ["one", "second", "one", "one", "third", "second", "one"];
+const arr = ["one", "second", "one", "one", "third", "second", "second", "one"];
 // function deleteDuplicate (array){
 //     if(!Array.isArray(array)) throw new TypeError('Argument could be only array type');
 //     array = Array.from(new Set(array));
@@ -1382,15 +1382,102 @@ const arr = ["one", "second", "one", "one", "third", "second", "one"];
 // function deleteNearElements(array) {
 //   const result = [];
 //   array.forEach((el, idx) => {
-//     if (!result.includes(el) && el === array[idx]) {
+//     if (el !== array[idx + 1] && el !== arr[idx - 1]) {
 //       result.push(el);
 //     }
 //   });
-//   return result
+//   return result;
 // }
 
 // console.log(deleteNearElements(arr));
 //
+
+// Сделайте функцию, которая параметром будет принимать массив с числами и возвращать максимальное и минимальное значение из этого массива в виде следующего объекта:
+
+// {
+// 	max: 9,
+// 	min: 1,
+// }
+// const arrNums = [3, 2, 9, 1, 6];
+// function minMax(array) {
+//   const sortArray = array.sort((a, b) => a - b);
+//   console.log(sortArray);
+//   return {
+//     max: sortArray.pop(),
+//     min: sortArray[0],
+//   };
+// }
+// console.log(minMax(arrNums));
+
+//4.4 level
+// Сделайте функцию, которая параметром будет принимать число, а количество его делителей.
+// const num = 10;
+// function timesDividers(number) {
+//   let count = 0;
+//   let dividers = [];
+//   for (let i = 1; i < number; i++) {
+//     count++;
+//     if (num % count === 0) dividers.push(count);
+//   }
+//   return dividers.length;
+// }
+// console.log(timesDividers(num));
+
+// const num = 73;
+
+// function commonNum(targetNum) {
+//     let count = 2;
+//     let res = ''
+//     for(let i =  0; i < num; i++){
+//         if(targetNum % count !== 0 && targetNum / targetNum === 1){
+//             res = 'Common number'
+//         }else {
+//             res = 'Uncommon number'
+//         }
+//     }
+//     return res
+// }
+// console.log(commonNum(num));
+
+
+// Сделайте функцию, которая параметром будет принимать число и удалять из него четные цифры.
+
+// const a = 278512
+// function deteleEvenNumber(num) {
+//     return +num.toString().split('').filter(el => +el % 2 !== 0).join("")
+// }
+// console.log(deteleEvenNumber(a));
+
+// Сделайте функцию, которая заполнит массив N случайными числами из заданного промежутка.
+// const n = 1;
+// const a = 10;
+
+// function fillArray(min, max){
+//     const arr = [];
+
+//     for(let i = 0; i < max; i++){
+//         let randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+//         arr.push(randomNum)
+//     }
+//     return arr 
+// }
+// console.log(fillArray(n, a));
+
+// level 4.5
+// Дана переменная со строкой. Проверьте, что в эта строка представляет собой число, то есть состоит только из цифр
+// const str = '5431';
+// console.log(str.split("").every(el => !Number.isNaN(+el)));
+
+// Дана переменная со строкой. Проверьте, что в эта строка представляет собой дробь.
+// const str = '5/2'
+// console.log(/^\d+\/\d+$/.test(str));
+
+// Сделайте функцию, которая параметром будет принимать массив с числами и возвращать второе по величине число.
+// const array = [21,9, 1, 32, 3, 10];
+// console.log(array.sort((a,b) => a - b)[array.length - 2]);
+
+// Сделайте функцию, которая параметрами будет принимать два числа и возвращать массив, заполненный целыми числами от минимального параметра до максимального.
+
 // Additional tasks
 // Выведите на экран текущую дату-время в формате 12:59:59 31.12.2014. Используйте для всех частей даты (кроме года) созданную нами функцию для добавления нуля при необходимости.
 
